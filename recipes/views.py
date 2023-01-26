@@ -9,4 +9,4 @@ def sobre(request):
     return HttpResponse('SOBRE')
 
 def contato(request):
-    return render (request,'templates_temp/temp.html')
+    return render (request,'recipes/contato.html')
