@@ -4,7 +4,9 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=65)
-
+#def str, faz com que os itens dentro de categoria sejam mostrados pelos nomes, e não ID.
+    def __str__(self) -> str:
+        return self.name
 
 class Recipe(models.Model):
     title = models.CharField(max_length=65)
@@ -27,6 +29,10 @@ class Recipe(models.Model):
         User, on_delete=models.SET_NULL, null=True
     )
 
+    def __str__(self) -> str:
+        return self.title
+
+    
 # EDITED
 # title description slug
 # preparation_time preparation_time_unit
